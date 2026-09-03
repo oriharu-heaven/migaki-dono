@@ -1,0 +1,144 @@
+/* §4.2 カラートークン */
+:root {
+  --sumi:   #1C1A17;  /* 墨。テキスト */
+  --kinari: #EDE6D6;  /* 生成り。ブラシの毛 */
+  --kincha: #B8862F;  /* 金茶。柄・家紋・アクセント */
+  --shu:    #C2452D;  /* 朱。警告・破棄のみ */
+
+  /* §4.3 タイポグラフィ。Webフォントは読み込まない（起動レイテンシ要件） */
+  --font-serif: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-sans:  system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
+[data-slot="morning"] {
+  --base:    #F2EFE6;  /* 背景 */
+  --surface: #E3DCCB;  /* 回答ボタン面 */
+  --figure:  #2E4A7D;  /* 殿の肩衣。藍 */
+  --text:    var(--sumi);
+  --muted:   #6E6659;
+}
+
+[data-slot="night"] {
+  --base:    #141A26;
+  --surface: #1F2838;
+  --figure:  #4A6FA5;  /* 淡い藍 */
+  --text:    #E8E4DA;
+  --muted:   #8C93A1;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--base);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  /* 洗面所での誤操作を防ぐ。スワイプ選択のために縦スクロールのラバーバンドも切る */
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* iOS のセーフエリア */
+.screen {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* §9 フォーカスリング可視 */
+:focus-visible {
+  outline: 3px solid var(--kincha);
+  outline-offset: 2px;
+}
+
+/* §9 タップ領域 最小88px */
+.primary-button {
+  min-height: 88px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+.primary-button:active { transform: scale(0.98); }
+
+.text-button {
+  min-height: 44px;
+  padding: 0 12px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.serif { font-family: var(--font-serif); }
+.muted { color: var(--muted); }
+
+/* §4.3 質問文 明朝 28px */
+.question-text {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+
+/* 殿の台詞 明朝 20px */
+.dono-line {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+/* 回答ラベル ゴシック 18px weight 500 */
+.answer-label {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* §4.4 prefers-reduced-motion では、すべて即時切り替えにする */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$comment": "§7.6 生成APIが3秒以内に応答しない/失敗した場合に、ここからランダムに2問出す。",
+  "version": 1,
+  "pool": [
+    { "id": "f1", "text": "人と話して気を使った", "category": "social" },
+    { "id": "f2", "text": "明日のことが気がかりだ", "category": "load" },
+    { "id": "f3", "text": "今日は体を動かした", "category": "body" },
+    { "id": "f4", "text": "やり残したことがある", "category": "work" },
+    { "id": "f5", "text": "今日は時間に追われていた", "category": "load" },
+    { "id": "f6", "text": "落ち着いて過ごせた時間があった", "category": "mood" },
+    { "id": "f7", "text": "画面を見ている時間が長かった", "category": "work" },
+    { "id": "f8", "text": "外の空気に当たった", "category": "body" },
+    { "id": "f9", "text": "誰かと軽い話ができた", "category": "social" },
+    { "id": "f10", "text": "寝る支度は早めにできそうだ", "category": "sleep" }
+  ]
+}

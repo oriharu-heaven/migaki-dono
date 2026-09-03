@@ -1,0 +1,14 @@
+{
+  "$comment": "固定パート。テスト中に文言を差し替えるためコードから外出ししている。ビルド不要で編集可。",
+  "version": 1,
+  "morning": [
+    { "id": "m1", "text": "昨夜はよく眠れた", "category": "sleep" },
+    { "id": "m2", "text": "今、体は軽い", "category": "body" },
+    { "id": "m3", "text": "今日は気分がよい", "category": "mood" }
+  ],
+  "night": [
+    { "id": "n1", "text": "今日は疲れている", "category": "body" },
+    { "id": "n2", "text": "今日は気分がよかった", "category": "mood" },
+    { "id": "n3", "text": "今日はやることが多かった", "category": "load" }
+  ]
+}

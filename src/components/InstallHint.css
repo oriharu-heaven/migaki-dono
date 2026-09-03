@@ -1,0 +1,16 @@
+.install-hint {
+  margin: 4px 12px 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.install-hint p {
+  margin: 0;
+  font-size: 13px;
+  flex: 1;
+  color: var(--muted);
+}
+.install-hint .text-button { flex: 0 0 auto; font-size: 13px; }

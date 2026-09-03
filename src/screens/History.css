@@ -1,0 +1,89 @@
+.history {
+  padding: calc(env(safe-area-inset-top) + 8px) 16px calc(env(safe-area-inset-bottom) + 32px);
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.history__top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.history__title {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+.history__top .text-button:last-child { justify-self: end; }
+.history__top .text-button:first-child { justify-self: start; }
+
+.history__empty { margin-top: 25vh; }
+
+.history__section { margin-top: 20px; }
+.history__heading {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+.history__chart { margin-left: -8px; }
+.history__note { margin: 4px 0 0; font-size: 13px; }
+
+.history__bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.history__bars li {
+  display: grid;
+  grid-template-columns: 5.5em 1fr 3em;
+  align-items: center;
+  gap: 8px;
+}
+.history__bar-label { font-size: 15px; }
+.history__bar-track {
+  height: 12px;
+  border-radius: 6px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.history__bar-fill { display: block; height: 100%; background: var(--kincha); }
+.history__bar-value { font-size: 13px; text-align: right; }
+
+.history__days { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.history__day {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  font-size: 15px;
+}
+
+.history__detail { padding: 10px 4px 4px; }
+.history__session { margin-bottom: 12px; }
+.history__session-head { margin: 0 0 4px; font-size: 13px; }
+.history__answers { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.history__answers li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+  padding: 4px 2px;
+  border-bottom: 1px solid var(--surface);
+}
+.history__answer-text { flex: 1; }
+.history__answer-value { font-variant-numeric: tabular-nums; color: var(--kincha); }
+
+.history__export-hint { margin-top: 24px; font-size: 13px; }
+
+.history__support {
+  margin-top: 24px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface);
+}
+.history__support p { margin: 0 0 4px; font-size: 13px; }
+.history__support p:last-child { margin-bottom: 0; }

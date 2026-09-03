@@ -1,0 +1,28 @@
+.checkin {
+  padding-top: calc(env(safe-area-inset-top) + 10px);
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
+}
+
+.checkin__top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 8px;
+}
+.checkin__undo { justify-self: start; font-size: 15px; }
+.checkin__undo:disabled { opacity: 0.3; }
+.checkin__quit { justify-self: end; font-size: 15px; }
+
+/* §S-2 質問文は上下に大きく余白 */
+.checkin__question {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+}
+
+.checkin__notice { margin: 0; font-size: 14px; }
